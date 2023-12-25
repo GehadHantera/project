@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ppp
+  labels:
+    l1: lab
+spec:
+  containers:
+    - name: con
+      image: nginx:alpine
+      resources:
+        limits:
+          memory: "512Mi"
+          cpu: "1"

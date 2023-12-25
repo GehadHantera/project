@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: depcond
+spec:
+  selector:
+    matchLabels:
+      l1: lab
+  replicas: 3
+  template: 
+    metadata:
+      name: ppp
+      labels:
+        l1: lab
+    spec:
+      containers:
+        - name: con
+          image: nginx:alpine
+          imagePullPolicy: IfNotPresent
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "1"
+            requests:
+              memory: "100Mi"
